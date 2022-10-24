@@ -5,11 +5,12 @@ class LoginUIView: UIView {
     
     let label: UILabel = {
         let view = UILabel()
+        view.textColor = .white
         return view
     }()
     var textFiled: UITextField = {
         let view = UITextField()
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .darkGray
         return view
     }()
     
@@ -35,9 +36,10 @@ class LoginUIView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .systemBlue
+//        self.backgroundColor = .systemBlue
         cnofigureHierarchy()
         configureLayout()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -68,6 +70,7 @@ class LoginUIView: UIView {
         
         
     }
-    
+
+
     
 }
