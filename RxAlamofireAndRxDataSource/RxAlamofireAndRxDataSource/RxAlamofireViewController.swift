@@ -4,7 +4,7 @@ import RxCocoa
 import RxAlamofire
 
 
-class ViewController: UIViewController {
+class RxAlamofireViewController: UIViewController {
 
     let disposBag = DisposeBag()
     
