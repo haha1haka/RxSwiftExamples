@@ -11,22 +11,36 @@ class RxDataSourceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         testRxDataSource()
     }
-    
-    
-
-    
-    
-
 }
+
+
+
 
 extension RxDataSourceViewController {
     func testRxDataSource() {
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Int>>(configureCell: configureCell)
-        Observable.just([SectionModel(model: "title", items: [1, 2, 3])])
-            .bind(to: tableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Int>>(configureCell: {
+            dataSorce, tableView, indexPath, item in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+            cell.textLabel?.text = "\(item)"
+            return cell
+        })
+        
+
+        Observable.just([
+            SectionModel(model: "title", items: [1,2,3]),
+            SectionModel(model: "title", items: [1,2,3]),
+            SectionModel(model: "title", items: [1,2,3])
+        ])
+        .bind(to: tableView.rx.items(dataSource: dataSource))
+        .disposed(by: disposeBag)
+           
+        
+        
+
     }
 }

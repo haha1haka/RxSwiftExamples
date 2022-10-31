@@ -18,7 +18,7 @@ class RxAlamofireViewController: UIViewController {
 
 
 // MARK: - RxAlamofire
-extension ViewController {
+extension RxAlamofireViewController {
     func testRxAlmofire() {
         let url = APIKey.searchURL + "apple"
         request(.get, url, headers: ["Authorization": APIKey.authorization])
