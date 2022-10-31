@@ -12,20 +12,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         testRxAlmofire()
     }
-    
+}
+
+
+
+
+// MARK: - RxAlamofire
+extension ViewController {
     func testRxAlmofire() {
         let url = APIKey.searchURL + "apple"
         request(.get, url, headers: ["Authorization": APIKey.authorization])
             .data()
             .decode(type: SearchPhoto.self, decoder: JSONDecoder())
-            .subscribe { value in
-                print("🥶\(value)")
-            }.disposed(by: disposBag)
-
-
-        
+            .subscribe(onNext: { value in
+                print(value.results[0].likes)
+            })
+            .disposed(by: disposBag)
     }
-
-
 }
-
