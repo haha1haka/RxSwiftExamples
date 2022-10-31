@@ -7,6 +7,8 @@ class RxDataSourceViewController: UIViewController {
 
     let disposeBag = DisposeBag()
     
+    var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, Int>>!
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -23,12 +25,19 @@ extension RxDataSourceViewController {
     func testRxDataSource() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Int>>(configureCell: {
+        dataSource = .init(configureCell: {
             dataSorce, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
             cell.textLabel?.text = "\(item)"
             return cell
         })
+        
+
+    
+        dataSource.titleForHeaderInSection = { dataSource, index in
+            return dataSource.sectionModels[index].model
+        }
+        
         
 
         Observable.just([
@@ -39,7 +48,7 @@ extension RxDataSourceViewController {
         .bind(to: tableView.rx.items(dataSource: dataSource))
         .disposed(by: disposeBag)
            
-        
+
         
 
     }
