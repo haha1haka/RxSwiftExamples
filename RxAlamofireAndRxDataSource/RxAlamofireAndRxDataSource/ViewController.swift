@@ -1,17 +1,18 @@
-//
-//  ViewController.swift
-//  RxAlamofireAndRxDataSource
-//
-//  Created by HWAKSEONG KIM on 2022/10/31.
-//
-
 import UIKit
+import RxSwift
+import RxCocoa
+import RxAlamofire
+
 
 class ViewController: UIViewController {
 
+    let disposBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        func testRxAlmofire() {
+            
+        }
     }
 
 
