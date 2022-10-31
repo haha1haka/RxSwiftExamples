@@ -10,9 +10,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        func testRxAlmofire() {
-            
-        }
+        testRxAlmofire()
+    }
+    
+    func testRxAlmofire() {
+        let url = APIKey.searchURL + "apple"
+        request(.get, url, headers: ["Authorization": APIKey.authorization])
+            .subscribe { value in
+                print("🥶\(value)")
+            }.disposed(by: disposBag)
+
+
+        
     }
 
 
