@@ -19,6 +19,7 @@
 		F42E1BDC290F785100E5FB6A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F42E1BDB290F785100E5FB6A /* RxCocoa */; };
 		F42E1BDE290F785100E5FB6A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F42E1BDD290F785100E5FB6A /* RxSwift */; };
 		F42E1BE0290F78E100E5FB6A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E1BDF290F78E100E5FB6A /* APIKey.swift */; };
+		F42E1BE2290F7A1600E5FB6A /* SearchPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E1BE1290F7A1600E5FB6A /* SearchPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		F42E1BCA290F77B500E5FB6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F42E1BCC290F77B500E5FB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F42E1BDF290F78E100E5FB6A /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		F42E1BE1290F7A1600E5FB6A /* SearchPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				F42E1BBE290F77B400E5FB6A /* AppDelegate.swift */,
 				F42E1BC0290F77B400E5FB6A /* SceneDelegate.swift */,
 				F42E1BC2290F77B400E5FB6A /* ViewController.swift */,
+				F42E1BE1290F7A1600E5FB6A /* SearchPhoto.swift */,
 				F42E1BC4290F77B400E5FB6A /* Main.storyboard */,
 				F42E1BC7290F77B500E5FB6A /* Assets.xcassets */,
 				F42E1BC9290F77B500E5FB6A /* LaunchScreen.storyboard */,
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42E1BE2290F7A1600E5FB6A /* SearchPhoto.swift in Sources */,
 				F42E1BC3290F77B400E5FB6A /* ViewController.swift in Sources */,
 				F42E1BBF290F77B400E5FB6A /* AppDelegate.swift in Sources */,
 				F42E1BE0290F78E100E5FB6A /* APIKey.swift in Sources */,

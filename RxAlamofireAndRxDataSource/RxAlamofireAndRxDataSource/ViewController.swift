@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     func testRxAlmofire() {
         let url = APIKey.searchURL + "apple"
         request(.get, url, headers: ["Authorization": APIKey.authorization])
+            .data()
+            .decode(type: SearchPhoto.self, decoder: JSONDecoder())
             .subscribe { value in
                 print("🥶\(value)")
             }.disposed(by: disposBag)
